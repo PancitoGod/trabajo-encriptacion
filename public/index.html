@@ -1,89 +1,119 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
-
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/11.0.2/firebase-app-compat.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/11.0.2/firebase-auth-compat.js"></script>
-    <script defer src="/__/firebase/11.0.2/firebase-database-compat.js"></script>
-    <script defer src="/__/firebase/11.0.2/firebase-firestore-compat.js"></script>
-    <script defer src="/__/firebase/11.0.2/firebase-functions-compat.js"></script>
-    <script defer src="/__/firebase/11.0.2/firebase-messaging-compat.js"></script>
-    <script defer src="/__/firebase/11.0.2/firebase-storage-compat.js"></script>
-    <script defer src="/__/firebase/11.0.2/firebase-analytics-compat.js"></script>
-    <script defer src="/__/firebase/11.0.2/firebase-remote-config-compat.js"></script>
-    <script defer src="/__/firebase/11.0.2/firebase-performance-compat.js"></script>
-    <!-- 
-      initialize the SDK after all desired features are loaded, set useEmulator to false
-      to avoid connecting the SDK to running emulators.
-    -->
-    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
-
-    <style media="screen">
-      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
-      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
-      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
-      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
-      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
-      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
-      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
-      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
-      @media (max-width: 600px) {
-        body, #message { margin-top: 0; background: white; box-shadow: none; }
-        body { border-top: 16px solid #ffa100; }
-      }
-    </style>
-  </head>
-  <body>
-    <div id="message">
-      <h2>Welcome</h2>
-      <h1>Firebase Hosting Setup Complete</h1>
-      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
-      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CIPX</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="header-content">
+      <img src="/assets/CIPX.png" alt="Logo CIPX" class="header-logo-app">
+      <img src="/assets/Logo uss.png" alt="Logo Universidad San Sebastián" class="header-logo">
     </div>
-    <p id="load">Firebase SDK Loading&hellip;</p>
+  </header>
 
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const loadEl = document.querySelector('#load');
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        // // The Firebase SDK is initialized and available here!
-        //
-        // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-        // firebase.firestore().doc('/foo/bar').get().then(() => { });
-        // firebase.functions().httpsCallable('yourFunction')().then(() => { });
-        // firebase.messaging().requestPermission().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-        // firebase.analytics(); // call to activate
-        // firebase.analytics().logEvent('tutorial_completed');
-        // firebase.performance(); // call to activate
-        //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+  <!-- HOME -->
+  <div class="container" id="home-section">
+    <div class="panel">
+      <img src="/assets/contrasena.png" alt="Encriptador" class="panel-image">
+      <h2>Encriptador</h2>
+      <p>Protege tu texto aplicando un cifrado, ideal para mantener la privacidad.</p>
+      <button onclick="showSection('encrypt')">Ir al Encriptador</button>
+    </div>
+    <div class="panel">
+      <img src="/assets/clave.png" alt="Desencriptador" class="panel-image">
+      <h2>Desencriptador</h2>
+      <p>Descifra el texto previamente encriptado o cualquier texto de entrada.</p>
+      <button onclick="showSection('decrypt')">Ir al Desencriptador</button>
+    </div>
+    <div class="panel">
+      <img src="/assets/informacion.png" alt="Información" class="panel-image">
+      <h2>Información</h2>
+      <p>Descubre cómo funciona esta aplicación, quien la desarrollo y las tecnologías detrás de ella.</p>
+      <button onclick="showSection('about')">Ver Información</button>
+    </div>
+  </div>
 
-        try {
-          let app = firebase.app();
-          let features = [
-            'auth', 
-            'database', 
-            'firestore',
-            'functions',
-            'messaging', 
-            'storage', 
-            'analytics', 
-            'remoteConfig',
-            'performance',
-          ].filter(feature => typeof app[feature] === 'function');
-          loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
-        } catch (e) {
-          console.error(e);
-          loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
-        }
-      });
-    </script>
-  </body>
+  <!-- ENCRIPTADOR -->
+  <div id="encrypt-section" style="display: none;">
+    <div>
+        <h2>Encriptador de Texto</h2>
+    </div>
+    <input type="text" id="encrypt-text-input" placeholder="Escribe el texto aquí">
+    <div id="encrypt-result" style="margin-top: 20px; font-weight: bold; color: #5a67d8;"></div>
+    <div style="display: flex; gap: 10px;">
+        <button onclick="encryptText()">Encriptar</button>
+        <button id="copy-encrypt-button" style="display: none;" onclick="copyEncryptToClipboard()">Copiar</button>
+        <button onclick="goToHome()">Volver al Inicio</button>
+    </div>
+  </div>
+
+  <!-- DESENCRIPTADOR -->
+  <div id="decrypt-section" style="display: none;">
+    <h2>Desencriptador de Texto</h2>
+    <input type="text" id="decrypt-text-input" placeholder="Escribe el texto aquí">
+    <div id="decrypt-result" style="margin-top: 20px; font-weight: bold; color: #5a67d8;"></div>
+    <div style="display: flex; gap: 10px;">
+        <button onclick="decryptText()">Desencriptar</button>
+        <button id="copy-decrypt-button" style="display: none;" onclick="copyDecryptToClipboard()">Copiar</button>
+        <button onclick="goToHome()">Volver al Inicio</button>
+    </div>
+  </div>
+
+  <!-- INFORMACIÓN -->
+  <div id="about-section" style="display: none;">
+    <h2>Creador de Esta Aplicación</h2>
+    <!-- Información sobre el creador -->
+    <div style="display: flex; flex-direction: column; align-items: center; margin-top: 20px;">
+      <img src="/assets/sl.jpg" alt="Sebastián Lincopán" style="width: 200px; height: 200px; border-radius: 80%; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);">
+      <h3>Sebastián Lincopán</h3>
+      <p>Estudiante de 5to Año de Ingeniería Civil Informática</p>
+    </div>
+
+    <!-- Tecnologías y funcionamiento -->
+    <div style="margin-top: 30px;">
+      <h3>Tecnologías Usadas</h3>
+      <ul>
+        <li><strong>HTML:</strong> Para estructurar la interfaz de usuario.</li>
+        <li><strong>CSS:</strong> Para estilizar y hacer que la aplicación sea atractiva visualmente.</li>
+        <li><strong>JavaScript:</strong> Para la lógica de encriptación y desencriptación.</li>
+      </ul>
+    </div>
+
+    <div style="margin-top: 20px;">
+      <h3>¿Cómo Funciona la Encriptación?</h3>
+      <p>
+        Este sistema de encriptación aplica dos métodos consecutivos:
+      </p>
+      <ul>
+        <li>
+          <strong>Desplazamiento Estático:</strong> Cada carácter es desplazado en el alfabeto/números por un valor fijo (ej. +5).
+        </li>
+        <li>
+          <strong>Desplazamiento Dinámico:</strong> El desplazamiento depende del conteo de mayúsculas, minúsculas y números en el texto.
+        </li>
+      </ul>
+      <p>
+        Para desencriptar, se invierten ambos procesos en el orden opuesto.
+      </p>
+    </div>
+
+    <!-- Botón para volver al inicio -->
+    <div style="display: flex; gap: 10px; margin-top: 30px;">
+      <button onclick="goToHome()">Volver al Inicio</button>
+    </div>
+  </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 CIPX. Todos los derechos reservados.</p>
+    </footer>
+
+  <script src="/js/script.js"></script>
+</body>
 </html>
+
+

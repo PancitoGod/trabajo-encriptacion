@@ -1,0 +1,212 @@
+/* Fondo General */
+body {
+  font-family: Arial, sans-serif; /* Fuente estándar */
+  margin: 0;
+  padding: 0;
+  min-height: 100vh; /* Asegurar que el cuerpo cubra toda la altura de la pantalla */
+  display: flex;
+  flex-direction: column; /* Estructura en columna */
+  background: #42275a;  /* Color de fondo para navegadores antiguos */
+  background: -webkit-linear-gradient(to right, #734b6d, #42275a); /* Gradiente para navegadores Chrome y Safari */
+  background: linear-gradient(to right, #734b6d, #42275a); /* Gradiente estándar para navegadores modernos */
+  color: #333; /* Color de texto estándar */
+}
+
+/* Header */
+header {
+  background: #20002c;
+  background: linear-gradient(to left, #cbb4d4, #20002c); /* Gradiente invertido */
+  color: white;
+  display: flex;
+  justify-content: space-between; /* Espaciar el contenido hacia los extremos */
+  align-items: center; /* Centrar verticalmente los elementos */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para dar relieve */
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%; /* Ancho completo del encabezado */
+}
+
+h1 {
+  margin: 0; /* Eliminar espacio adicional */
+  font-size: 24px; /* Tamaño del título */
+}
+
+.header-logo {
+  max-height: 60px; /* Altura máxima del logo */
+  margin-left: 20px; /* Separación del logo respecto al título */
+  padding: 20px; /* Espaciado interno */
+}
+
+/* Estilo para el logo principal */
+.header-logo-app {
+  max-height: 120px; /* Define un ancho máximo */
+
+}
+
+/* Contenedor Principal */
+.container {
+  display: flex;
+  justify-content: center; /* Centrar los paneles horizontalmente */
+  align-items: center; /* Centrar los paneles verticalmente */
+  flex-wrap: nowrap; /* No apilar paneles, mantenerlos en fila */
+  gap: 20px; /* Espaciado entre paneles */
+  margin: 20px auto; /* Centrar el contenedor */
+  max-width: 1200px; /* Ancho máximo del contenedor */
+  flex-grow: 1; /* Expandir el contenedor para ocupar espacio disponible */
+}
+
+/* Paneles (Tarjetas) */
+.panel {
+  background: white; /* Fondo blanco */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1); /* Sombra para destacar */
+  border-radius: 12px; /* Bordes redondeados */
+  width: calc(33% - 20px); /* Ancho ajustado para dividir en tres paneles */
+  min-width: 280px; /* Ancho mínimo para pantallas pequeñas */
+  max-width: 350px; /* Ancho máximo para pantallas grandes */
+  padding: 20px; /* Espaciado interno */
+  text-align: center; /* Centrar texto */
+  transition: transform 0.3s, box-shadow 0.3s; /* Animación para hover */
+}
+
+.panel:hover {
+  transform: translateY(-10px); /* Elevar el panel al pasar el ratón */
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2); /* Intensificar la sombra */
+}
+
+/* Imágenes de los Paneles */
+.panel-image {
+  width: 100%; /* Ancho completo de la imagen */
+  max-width: 150px; /* Tamaño estándar para imágenes */
+  height: auto; /* Mantener proporciones */
+  margin: 0 auto 20px auto; /* Centrar imagen y agregar margen inferior */
+}
+
+/* Footer */
+footer {
+  background: #20002c; /* Fondo oscuro */
+  color: white; /* Texto blanco */
+  text-align: center; /* Centrar texto */
+  padding: 10px 0; /* Espaciado interno vertical */
+  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1); /* Sombra para destacar el footer */
+  font-size: 14px; /* Tamaño de texto pequeño */
+  position: relative; /* Permite posicionamiento dinámico */
+}
+
+/* Botones */
+button {
+  background: #5a67d8; /* Color de fondo */
+  color: white; /* Texto blanco */
+  border: none; /* Sin borde */
+  border-radius: 8px; /* Bordes redondeados */
+  padding: 10px 20px; /* Espaciado interno */
+  cursor: pointer; /* Cursor tipo "mano" al pasar el ratón */
+  font-size: 16px; /* Tamaño de texto estándar */
+  transition: background 0.3s; /* Animación de transición para hover */
+}
+
+button:hover {
+  background: #434190; /* Cambiar color al pasar el ratón */
+}
+
+/* Contenedor del panel */
+#encrypt-section, #decrypt-section{
+  display: flex;
+  flex-direction: column; /* Organizar elementos en columna */
+  justify-content: center; /* Centrar contenido verticalmente */
+  align-items: center; /* Centrar contenido horizontalmente */
+  padding: 20px; /* Espaciado interno */
+  background: white; /* Fondo blanco */
+  margin: auto; /* Centrar sección vertical y horizontalmente */
+  width: 90%; /* Ancho flexible */
+  max-width: 600px; /* Ancho máximo */
+  min-height: 300px; /* Altura mínima */
+  border-radius: 12px; /* Bordes redondeados */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Sombra para destacar */
+}
+
+/* Ajustes para la sección "Acerca de Esta Aplicación" */
+#about-section {
+  display: flex;
+  flex-direction: column; /* Organizar elementos en columna */
+  justify-content: flex-start; /* Ajustar la posición hacia la parte superior */
+  align-items: center; /* Centrar el contenido horizontalmente */
+  padding: 20px; /* Espaciado interno */
+  background: white; /* Fondo blanco */
+  margin: 50px auto; /* Margen superior reducido */
+  width: 90%; /* Ancho flexible */
+  max-width: 600px; /* Ancho máximo */
+  min-height: 300px; /* Altura mínima */
+  border-radius: 12px; /* Bordes redondeados */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Sombra para destacar */
+}
+
+/* Ajustes adicionales para el margen superior */
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Mover hacia la parte superior de la página */
+}
+
+header {
+  margin-bottom: 20px; /* Añadir un pequeño espacio después del encabezado */
+}
+
+/* Resultado del texto */
+#encrypt-result, #decrypt-result {
+  margin: 15px 0; /* Margen superior e inferior */
+  font-size: 16px; /* Tamaño de texto */
+  color: #5a67d8; /* Color del texto del resultado */
+  text-align: center; /* Centrar texto */
+  word-wrap: break-word; /* Ajustar texto largo al ancho del contenedor */
+}
+
+  /* Botones dentro del panel */
+#encrypt-section div, #decrypt-section div, #about-section {
+  display: flex; /* Mostrar botones en línea */
+  justify-content: center; /* Centrar botones horizontalmente */
+  gap: 10px; /* Espaciado entre botones */
+  margin-top: auto; /* Espaciado dinámico superior */
+  margin-bottom: 20px; /* Espacio inferior */
+}
+
+  /* Input de texto */
+#encrypt-section input, #decrypt-section input {
+  margin: 20px 0; /* Espaciado vertical */
+  padding: 10px; /* Espaciado interno */
+  width: 100%; /* Ancho completo */
+  max-width: 580px; /* Máximo ancho */
+  border: 1px solid #ccc; /* Borde gris claro */
+  border-radius: 5px; /* Bordes redondeados */
+  font-size: 16px; /* Tamaño de texto */
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column; /* Apilar paneles verticalmente */
+    gap: 15px; /* Reducir espacio entre paneles */
+  }
+
+  .panel {
+    width: 90%; /* Ancho completo en pantallas pequeñas */
+  }
+
+  .panel-image {
+    max-width: 120px; /* Reducir tamaño de las imágenes */
+  }
+
+  #encrypt-section input, #decrypt-section input {
+    width: 95%; /* Ocupa todo el ancho disponible */
+    max-width: none; /* Sin límite de ancho */
+    font-size: 16px; /* Fuente más pequeña */
+  }
+
+  .header-logo-app {
+    max-width: 200px; /* Aumenta el tamaño en pantallas grandes */
+  }
+
+}
